@@ -6,8 +6,6 @@
 		let startOffset = window.getSelection().getRangeAt(0).startOffset
 		let endOffset = window.getSelection().getRangeAt(0).endOffset
 
-		let range = window.getSelection().getRangeAt(0)
-		let boundary = range.getBoundingClientRect()
 
 		if(!boundary || ((boundary.height === 0 && boundary.width === 0) && range.startContainer === range.endContainer)) {
 			boundary = range.startContainer.getBoundingClientRect()			
@@ -23,8 +21,25 @@
 	}
 
 
+	let Sharer = {
 
+		getMenu: function() {
+			if(!this.menu) {
+				this.menu = document.getElementById('Toolbar')
+			}
+			return this.menu			
+		} 
 
+		positionMenu: function() {
+			this.getMenu().style.left = '0'
+			this.getMenu().style.right = 'initial'
+
+			let range = window.getSelection().getRangeAt(0)
+			let boundary = range.getBoundingClientRect()
+			
+		}
+		
+	}
 
 
 })()
