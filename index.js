@@ -22,7 +22,6 @@
 
 
 	let Sharer = {
-
 		getMenu: function() {
 			if(!this.menu) {
 				this.menu = document.getElementById('Toolbar')
@@ -34,11 +33,10 @@
 			this.getMenu().style.left = '0'
 			this.getMenu().style.right = 'initial'
 
-			let range = window.getSelection().getRangeAt(0)
-			let boundary = range.getBoundingClientRect()
 			
 		}
 		
+
 	}
 
 
