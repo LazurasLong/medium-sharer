@@ -1,36 +1,15 @@
 (function() {
-	let Toolbar = document.getElementById('Toolbar')
 
-	document.addEventListener('mouseup', function() {
-		let texto = window.getSelection().toString()
-		let startOffset = window.getSelection().getRangeAt(0).startOffset
-		let endOffset = window.getSelection().getRangeAt(0).endOffset
-
-
-		if(!boundary || ((boundary.height === 0 && boundary.width === 0) && range.startContainer === range.endContainer)) {
-			boundary = range.startContainer.getBoundingClientRect()			
-		}
-
-		setToolbarPosition(boundary.left + boundary.width / 2, boundary.top)
-
-	})
-
-	function setToolbarPosition(x, y) {
-		Toolbar.style.left = `${x}px`
-		Toolbar.style.top = `${y}px`
-	}
-
-
-	let Sharer = {
-		window: window
-		diffLeft: 0
+	let sharer = {
+		window: window,
+		diffLeft: 0,
 
 		getMenu: function() {
 			if(!this.menu) {
 				this.menu = document.getElementById('Toolbar')
 			}
 			return this.menu			
-		} 
+		}, 
 
 		positionMenu: function(selection) {
 			this.getMenu().style.left = '0'
@@ -50,12 +29,44 @@
 
 			let halfOffsetWidth = menuWidth / 2
 			let buttonHeight = 50
-			defaultLeft = this.diffLeft - halfOffsetWidth
-			
+			let defaultLeft = this.diffLeft - halfOffsetWidth
+			let elementsContainer = document.getElementById('Container')
+			let positions = {},
+          relativeBoundary = {},
+          middleBoundary, elementsContainerBoundary;
+
+			let elementsContainerAbsolute = ['absolute', 'fixed'].indexOf(window.getComputedStyle(elementsContainer).getPropertyValue('position')) > -1
+
+			if(elementsContainerAbsolute) {
+
+			} else {
+				positions.top = this.window.pageYOffset
+			}
+
+
+			middleBoundary = boundary.left  + boundary.width / 2
+			positions.top += boundary.top - menuHeight
+
+			console.log(middleBoundary, positions.top)
+			setToolbarPosition(middleBoundary, positions.top)
 
 		}
-		
+	}
 
+	let Toolbar = document.getElementById('Toolbar')
+
+	document.addEventListener('mouseup', function() {
+		let texto = window.getSelection().toString()
+		let startOffset = window.getSelection().getRangeAt(0).startOffset
+		let endOffset = window.getSelection().getRangeAt(0).endOffset
+		sharer.positionMenu(window.getSelection())
+
+
+	})
+
+	function setToolbarPosition(x, y) {
+		Toolbar.style.left = `${x}px`
+		Toolbar.style.top = `${y}px`
 	}
 
 
