@@ -32,8 +32,8 @@
 			let defaultLeft = this.diffLeft - halfOffsetWidth
 			let elementsContainer = document.getElementById('Container')
 			let positions = {},
-          relativeBoundary = {},
-          middleBoundary, elementsContainerBoundary;
+        	relativeBoundary = {},
+        	middleBoundary, elementsContainerBoundary;
 
 			let elementsContainerAbsolute = ['absolute', 'fixed'].indexOf(window.getComputedStyle(elementsContainer).getPropertyValue('position')) > -1
 
@@ -46,6 +46,13 @@
 
 			middleBoundary = boundary.left  + boundary.width / 2
 			positions.top += boundary.top - menuHeight
+
+			if(boundary.top < buttonHeight) {
+				menuElement.classList.add('share-menu-over')
+				menuElement.classList.remove('share-menu-under')
+				positions.top += buttonHeight + boundary.height - 50
+			}
+
 
 			console.log(middleBoundary, positions.top)
 			setToolbarPosition(middleBoundary, positions.top)
