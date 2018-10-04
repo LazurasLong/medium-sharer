@@ -14,7 +14,6 @@
 				left: 0;
 				top: 100px;
 				border-radius: 4px;
-				overflow: hidden;
 				box-shadow: 0 0 3px black;				
 				visibility: hidden;				
 				transition: all .2s;
@@ -29,7 +28,6 @@
 			    margin-left: -8px;
 			    position: absolute;
 			    width: 0;
-
 			    border-width: 8px 8px 0 8px;
 			    border-color: #242424 transparent transparent transparent;
     			top: 50px;
@@ -42,16 +40,22 @@
 
 			}
 			.Toolbar ul li {
-				display: block;
+				margin: 0;
+				padding: 0;
 			}
 			.Toolbar ul li button {
+				box-sizing: border-box;
 				width: 50px;
 				height: 50px;
 				cursor: pointer;
+				display: block;
 				border: 0;
 		    background: #222222;
 		    color: white;		   	
 			}		
+			.Toolbar ul li button:focus {
+				outline: 0;
+			}
 
 			.Toolbar ul li button:hover {
 				background: black;
