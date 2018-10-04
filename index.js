@@ -11,10 +11,10 @@
 			return this.menu			
 		}, 
 		showMenu: function() {
-			this.getMenu().style.visibility = 'visible'
+			this.getMenu().style.display = 'inherit'
 		},
 		hideMenu: function() {
-			this.getMenu().style.visibility = 'hidden'
+			this.getMenu().style.display = 'none'
 		},
 		positionMenu: function(selection) {
 			this.getMenu().style.left = '0'
@@ -82,8 +82,8 @@
 	document.addEventListener('mouseup', function() {		
 
 		if(window.getSelection().toString()) {
-			sharer.showMenu()
 			sharer.positionMenu(window.getSelection())		
+			sharer.showMenu()
 		} else {
 			sharer.hideMenu()
 		}
