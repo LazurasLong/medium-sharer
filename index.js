@@ -68,9 +68,6 @@
 				positions.right = 'initial'
 			}
 
-
-
-
 			console.log(middleBoundary, positions.top)
 			setToolbarPosition(middleBoundary, positions.top)
 
@@ -79,13 +76,8 @@
 
 	let Toolbar = document.getElementById('Toolbar')
 
-	document.addEventListener('mouseup', function() {
-		let texto = window.getSelection().toString()
-		let startOffset = window.getSelection().getRangeAt(0).startOffset
-		let endOffset = window.getSelection().getRangeAt(0).endOffset
+	document.addEventListener('mouseup', function() {		
 		sharer.positionMenu(window.getSelection())
-
-
 	})
 
 	function setToolbarPosition(x, y) {
