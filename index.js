@@ -54,8 +54,21 @@
 			} else {
 				menuElement.classList.add('share-menu-under')
 				menuElement.classList.remove('share-menu-over')
-				positions.top += 50px
+				positions.top += 50
 			}
+
+			if(middleBoundary < halfOffsetWidth) {
+				positions.left = defaultLeft + halfOffsetWidth
+				positions.right = 'initial'
+			} else if((containerWidth - middleBoundary) < halfOffsetWidth) {
+				positions.left = 'auto'
+				positions.right = 0
+			} else {
+				positinos.left = defaultLeft + middleBoundary
+				positions.right = 'initial'
+			}
+
+			
 
 
 			console.log(middleBoundary, positions.top)
