@@ -74,8 +74,6 @@
 		}
 	}
 
-	let Toolbar = document.getElementById('Toolbar')
-
 	document.addEventListener('mouseup', function() {		
 		sharer.positionMenu(window.getSelection())
 	})
