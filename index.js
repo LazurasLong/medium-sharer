@@ -64,11 +64,11 @@
 				positions.left = 'auto'
 				positions.right = 0
 			} else {
-				positinos.left = defaultLeft + middleBoundary
+				positions.left = defaultLeft + middleBoundary
 				positions.right = 'initial'
 			}
 
-			
+
 
 
 			console.log(middleBoundary, positions.top)
