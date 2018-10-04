@@ -51,6 +51,10 @@
 				menuElement.classList.add('share-menu-over')
 				menuElement.classList.remove('share-menu-under')
 				positions.top += buttonHeight + boundary.height - 50
+			} else {
+				menuElement.classList.add('share-menu-under')
+				menuElement.classList.remove('share-menu-over')
+				positions.top += 50px
 			}
 
 
