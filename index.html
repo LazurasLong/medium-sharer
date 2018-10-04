@@ -16,8 +16,21 @@
 				transition: .2s;
 				border-radius: 4px;
 				overflow: hidden;
-				box-shadow: 0 0 3px black;
+				box-shadow: 0 0 3px black;				
 			}		
+			.Toolbar::after {
+		       border-style: solid;
+			    content: '';
+			    display: block;
+			    height: 0;
+			    left: 50%;
+			    margin-left: -8px;
+			    position: absolute;
+			    width: 0;
+			    border-width: 8px 8px 0 8px;
+			    border-color: #242424 transparent transparent transparent;
+    			top: 50px;
+			}
 			.Toolbar ul {
 				display: flex;
 				margin: 0;

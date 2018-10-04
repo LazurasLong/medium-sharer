@@ -10,7 +10,12 @@
 			}
 			return this.menu			
 		}, 
-
+		showMenu: function() {
+			this.getMenu().style.visibility = 'visible'
+		},
+		hideMenu: function() {
+			this.getMenu().style.visibility = 'hidden'
+		},
 		positionMenu: function(selection) {
 			this.getMenu().style.left = '0'
 			this.getMenu().style.right = 'initial'
@@ -75,7 +80,13 @@
 	}
 
 	document.addEventListener('mouseup', function() {		
-		sharer.positionMenu(window.getSelection())
+
+		if(window.getSelection().toString()) {
+			sharer.showMenu()
+			sharer.positionMenu(window.getSelection())		
+		} else {
+			sharer.hideMenu()
+		}
 	})
 
 	function setToolbarPosition(x, y) {
