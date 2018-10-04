@@ -10,11 +10,18 @@
 			}
 			return this.menu			
 		}, 
+		isDisplayed: function() {
+			return this.getMenu().classList.contains('share-menu-active')
+		},
 		showMenu: function() {
-			this.getMenu().style.display = 'inherit'
+			if(!this.isDisplayed()) {
+				this.getMenu().classList.add('share-menu-active')
+			}
 		},
 		hideMenu: function() {
-			this.getMenu().style.display = 'none'
+			if(this.isDisplayed()) {
+				this.getMenu().classList.remove('share-menu-active')
+			}
 		},
 		positionMenu: function(selection) {
 			this.getMenu().style.left = '0'

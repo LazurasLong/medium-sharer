@@ -13,10 +13,12 @@
 				position: absolute;
 				left: 0;
 				top: 100px;
-				transition: .2s;
 				border-radius: 4px;
 				overflow: hidden;
 				box-shadow: 0 0 3px black;				
+				visibility: hidden;				
+				transition: all .2s;
+		   	transition: visibility 0;
 			}		
 			.Toolbar::after {
 		       border-style: solid;
@@ -27,6 +29,7 @@
 			    margin-left: -8px;
 			    position: absolute;
 			    width: 0;
+
 			    border-width: 8px 8px 0 8px;
 			    border-color: #242424 transparent transparent transparent;
     			top: 50px;
@@ -47,13 +50,15 @@
 				cursor: pointer;
 				border: 0;
 		    background: #222222;
-		    color: white;
-		    transition: .3s;
-
-			}
+		    color: white;		   	
+			}		
 
 			.Toolbar ul li button:hover {
 				background: black;
+			}
+
+			.share-menu-active {
+				visibility: visible;	
 			}
 
 			#Container {
