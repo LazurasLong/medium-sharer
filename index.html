@@ -14,6 +14,9 @@
 				left: 0;
 				top: 100px;
 				transition: .2s;
+				border-radius: 4px;
+				overflow: hidden;
+				box-shadow: 0 0 3px black;
 			}		
 			.Toolbar ul {
 				display: flex;
@@ -23,13 +26,21 @@
 
 			}
 			.Toolbar ul li {
-				padding: 10px 15px;
 				display: block;
+			}
+			.Toolbar ul li button {
+				width: 50px;
+				height: 50px;
 				cursor: pointer;
+				border: 0;
+		    background: #222222;
+		    color: white;
+		    transition: .3s;
+
 			}
 
-			.Toolbar ul li:hover {
-				background: gray;
+			.Toolbar ul li button:hover {
+				background: black;
 			}
 
 			#Container {
@@ -47,9 +58,9 @@
 	<body>
 		<div id="Toolbar" class="Toolbar">
 			<ul>
-				<li>F</li>
-				<li>T</li>
-				<li>I</li>
+				<li><button>F</button></li>
+				<li><button>T</button></li>
+				<li><button>I</button></li>
 			</ul>
 		</div>
 

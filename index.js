@@ -82,6 +82,4 @@
 		Toolbar.style.left = `${x}px`
 		Toolbar.style.top = `${y}px`
 	}
-
-
 })()
