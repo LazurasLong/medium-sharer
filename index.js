@@ -60,12 +60,12 @@
 			positions.top += boundary.top - menuHeight
 
 			if(boundary.top < buttonHeight) {
-				menuElement.classList.add('share-menu-over')
-				menuElement.classList.remove('share-menu-under')
+				menuElement.classList.add('share-menu-arrow-over')
+				menuElement.classList.remove('share-menu-arrow-under')
 				positions.top += buttonHeight + boundary.height - 50
 			} else {
-				menuElement.classList.add('share-menu-under')
-				menuElement.classList.remove('share-menu-over')
+				menuElement.classList.add('share-menu-arrow-under')
+				menuElement.classList.remove('share-menu-arrow-over')
 				positions.top += 50
 			}
 
