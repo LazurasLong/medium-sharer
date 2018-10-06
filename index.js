@@ -40,14 +40,16 @@ function log(...args) {
 			menuElement.style.right = 'initial'
 			return menuElement.offsetHeight	
 		},
-
-		positionMenu: function(selection) {
+		getBoundary: function(selection) {
 			let range = selection.getRangeAt(0)
 			let boundary = range.getBoundingClientRect()
-
 			if(!boundary || ((boundary.height === 0 && boundary.width === 0) && range.startContainer === range.endContainer)) {
 				boundary = range.startContainer.getBoundingClientRect()
-			}
+			}	
+			return boundary
+		},
+		positionMenu: function(selection) {
+			let boundary = this.getBoundary(selection)
 			let containerWidth = this.window.innerWidth
 			const menuElement = this.getMenu()
 			const menuWidth = this.getMenuWidth()
@@ -57,7 +59,8 @@ function log(...args) {
 			let buttonHeight = 50
 			let defaultLeft = this.diffLeft - halfOffsetWidth
 
-			let elementsContainer = document.getElementById('Container')			
+			let elementsContainer = document.getElementById('Container')	
+
 			let positions = {},
         relativeBoundary = {},
         middleBoundary, 
@@ -96,7 +99,6 @@ function log(...args) {
 			}
 
 			this.setToolbarPosition(positions)
-
 		},
 		setToolbarPosition: function(positions) {
 			['top', 'left', 'right'].forEach(function(key) {
@@ -105,7 +107,8 @@ function log(...args) {
 		}
 	}
 
-	document.addEventListener('mouseup', function() {		
+	document.addEventListener('mouseup', function() {
+		log(window.getSelection().toString())
 		if(window.getSelection().toString()) {
 			sharer.positionMenu(window.getSelection())		
 			sharer.showMenu()
