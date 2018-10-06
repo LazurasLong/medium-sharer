@@ -28,7 +28,7 @@ function MediumSharer(element, options) {
 	this.buttons = options.buttons	
 }
 
-MediumSharer.proptotype = {
+MediumSharer.prototype = {
 	constructor: MediumSharer,
 	window: window,
 	diffLeft: 0,
@@ -153,7 +153,6 @@ MediumSharer.defaultOptions = {
 	let sharer = new MediumSharer()
 	document.addEventListener('mouseup', function() {		
 		setTimeout(function() {
-			log(window.getSelection().toString())
 			if(window.getSelection().toString()) {
 				sharer.positionMenu(window.getSelection())		
 				sharer.showMenu()
