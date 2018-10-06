@@ -107,13 +107,15 @@ function log(...args) {
 		}
 	}
 
-	document.addEventListener('mouseup', function() {
-		log(window.getSelection().toString())
-		if(window.getSelection().toString()) {
-			sharer.positionMenu(window.getSelection())		
-			sharer.showMenu()
-		} else {
-			sharer.hideMenu()
-		}
+	document.addEventListener('mouseup', function() {		
+		setTimeout(function() {
+			log(window.getSelection().toString())
+			if(window.getSelection().toString()) {
+				sharer.positionMenu(window.getSelection())		
+				sharer.showMenu()
+			} else {
+				sharer.hideMenu()
+			}
+		}, 0)
 	})
 })()
