@@ -141,7 +141,6 @@ MediumSharer.defaultOptions = {
 		'twitter',
 		'facebook',
 		'linkedin',
-		'pinterest'
 	]
 };
 
