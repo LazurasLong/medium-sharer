@@ -39,25 +39,24 @@
 			let menuWidth = menuElement.offsetWidth
 			let menuHeight = menuElement.offsetHeight
 
-			console.log('Menu ', menuWidth, menuHeight)
-
 			let halfOffsetWidth = menuWidth / 2
 			let buttonHeight = 50
 			let defaultLeft = this.diffLeft - halfOffsetWidth
-			let elementsContainer = document.getElementById('Container')
+
+			let elementsContainer = document.getElementById('Container')			
 			let positions = {},
-        	relativeBoundary = {},
-        	middleBoundary, elementsContainerBoundary;
+        relativeBoundary = {},
+        middleBoundary, 
+        elementsContainerBoundary;
 
 			let elementsContainerAbsolute = ['absolute', 'fixed'].indexOf(window.getComputedStyle(elementsContainer).getPropertyValue('position')) > -1
 
 			if(elementsContainerAbsolute) {
-
+				console.log('Container is absolute')
 			} else {
-				positions.top = this.window.pageYOffset
+				positions.top = this.window.pageYOffset				
 			}
-
-
+		
 			middleBoundary = boundary.left  + boundary.width / 2
 			positions.top += boundary.top - menuHeight
 
@@ -71,20 +70,26 @@
 				positions.top += 50
 			}
 
+
 			if(middleBoundary < halfOffsetWidth) {
 				positions.left = defaultLeft + halfOffsetWidth
 				positions.right = 'initial'
-			} else if((containerWidth - middleBoundary) < halfOffsetWidth) {
+			} else if((containerWidth - middleBoundary) < halfOffsetWidth) {				
 				positions.left = 'auto'
-				positions.right = 0
+				positions.right = '0'
 			} else {
 				positions.left = defaultLeft + middleBoundary
 				positions.right = 'initial'
 			}
 
-			console.log(middleBoundary, positions.top)
-			setToolbarPosition(middleBoundary, positions.top)
+			this.setToolbarPosition(positions)
 
+		},
+		setToolbarPosition: function(positions) {
+			let menu = this.getMenu();
+			['top', 'left', 'right'].forEach(function(key) {
+			  menu.style[key] = positions[key] + (isNaN(positions[key]) ? '' : 'px')
+			})
 		}
 	}
 
@@ -97,9 +102,4 @@
 			sharer.hideMenu()
 		}
 	})
-
-	function setToolbarPosition(x, y) {
-		Toolbar.style.left = `${x}px`
-		Toolbar.style.top = `${y}px`
-	}
 })()
