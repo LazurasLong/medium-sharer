@@ -86,10 +86,9 @@
 
 		},
 		setToolbarPosition: function(positions) {
-			let menu = this.getMenu();
 			['top', 'left', 'right'].forEach(function(key) {
-			  menu.style[key] = positions[key] + (isNaN(positions[key]) ? '' : 'px')
-			})
+			  this.getMenu().style[key] = positions[key] + (isNaN(positions[key]) ? '' : 'px')
+			}.bind(this))
 		}
 	}
 
