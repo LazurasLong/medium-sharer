@@ -28,21 +28,31 @@ function log(...args) {
 				this.getMenu().classList.remove('share-menu-active')
 			}
 		},
-		positionMenu: function(selection) {
-			this.getMenu().style.left = '0'
-			this.getMenu().style.right = 'initial'
+		getMenuWidth: function() {
+			let menuElement = this.getMenu()
+			menuElement.style.left = '0'
+			menuElement.style.right = 'initial'
+			return menuElement.offsetWidth
+		},
+		getMenuHeight: function() {
+			let menuElement = this.getMenu()
+			menuElement.style.left = '0'
+			menuElement.style.right = 'initial'
+			return menuElement.offsetHeight	
+		},
 
+		positionMenu: function(selection) {
 			let range = selection.getRangeAt(0)
 			let boundary = range.getBoundingClientRect()
 
 			if(!boundary || ((boundary.height === 0 && boundary.width === 0) && range.startContainer === range.endContainer)) {
 				boundary = range.startContainer.getBoundingClientRect()
 			}
-
 			let containerWidth = this.window.innerWidth
-			let menuElement = this.getMenu()
-			let menuWidth = menuElement.offsetWidth
-			let menuHeight = menuElement.offsetHeight				
+			const menuElement = this.getMenu()
+			const menuWidth = this.getMenuWidth()
+			const menuHeight = this.getMenuHeight()
+
 			let halfOffsetWidth = menuWidth / 2
 			let buttonHeight = 50
 			let defaultLeft = this.diffLeft - halfOffsetWidth
@@ -64,8 +74,6 @@ function log(...args) {
 			middleBoundary = boundary.left  + boundary.width / 2
 			positions.top += boundary.top - menuHeight
 
-			log(positions.top, boundary.height, menuHeight)
-
 			if(boundary.top < buttonHeight) {
 				menuElement.classList.add('share-menu-arrow-over')
 				menuElement.classList.remove('share-menu-arrow-under')
@@ -75,7 +83,6 @@ function log(...args) {
 				menuElement.classList.remove('share-menu-arrow-over')
 				positions.top += this.diffTop
 			}
-
 
 			if(middleBoundary < halfOffsetWidth) {
 				positions.left = defaultLeft + halfOffsetWidth
