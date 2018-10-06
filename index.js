@@ -1,8 +1,13 @@
+function log(...args) {
+	console.log(...args)
+}
+
 (function() {
 
 	let sharer = {
 		window: window,
 		diffLeft: 0,
+		diffTop: -10,
 
 		getMenu: function() {
 			if(!this.menu) {
@@ -37,8 +42,7 @@
 			let containerWidth = this.window.innerWidth
 			let menuElement = this.getMenu()
 			let menuWidth = menuElement.offsetWidth
-			let menuHeight = menuElement.offsetHeight
-
+			let menuHeight = menuElement.offsetHeight				
 			let halfOffsetWidth = menuWidth / 2
 			let buttonHeight = 50
 			let defaultLeft = this.diffLeft - halfOffsetWidth
@@ -60,14 +64,16 @@
 			middleBoundary = boundary.left  + boundary.width / 2
 			positions.top += boundary.top - menuHeight
 
+			log(positions.top, boundary.height, menuHeight)
+
 			if(boundary.top < buttonHeight) {
 				menuElement.classList.add('share-menu-arrow-over')
 				menuElement.classList.remove('share-menu-arrow-under')
-				positions.top += buttonHeight + boundary.height - 50
+				positions.top += buttonHeight + boundary.height - this.diffTop
 			} else {
 				menuElement.classList.add('share-menu-arrow-under')
 				menuElement.classList.remove('share-menu-arrow-over')
-				positions.top += 50
+				positions.top += this.diffTop
 			}
 
 
@@ -93,7 +99,6 @@
 	}
 
 	document.addEventListener('mouseup', function() {		
-
 		if(window.getSelection().toString()) {
 			sharer.positionMenu(window.getSelection())		
 			sharer.showMenu()
