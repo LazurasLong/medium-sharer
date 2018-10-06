@@ -2,6 +2,50 @@ function log(...args) {
 	console.log(...args)
 }
 
+function extend(object) {
+	if(arguments.length <= 0) {
+		throw new Error('Missing arguments in extend function')
+	}
+
+	let result = object || {}
+	for(let i = 1; i < arguments.length; i++) {
+		let replacement = arguments[i] || {}		
+		for(let key in replacement) {
+			if(typeof result[key] === 'object' && !isDomElement(result[key])) {
+				result[key] = extend(result[key], replacement[key])
+			} else {
+				result[key] = result[key] || replacement[key]
+			}
+		}
+	}
+}
+
+function MediumSharer(element, options) {
+	options = extend(options, MediumSharer.defaultOptions)
+
+	this.element = element
+	this.buttons = options.buttons	
+}
+
+MediumSharer.proptotype = {
+	constructor: MediumSharer,
+
+	init: function() {
+		
+	},
+
+}
+
+MediumSharer.defaultOptions = {
+	element: 'body',
+	buttons: {
+		'twitter',
+		'facebook',
+		'linkedin',
+		'pinterest'
+	}
+}
+
 (function() {
 
 	let sharer = {
