@@ -36,8 +36,10 @@
 
 			let containerWidth = this.window.innerWidth
 			let menuElement = this.getMenu()
-			let menuWidth = menuElement.offsetHeight
-			let menuHeight = menuElement.offsetWidth
+			let menuWidth = menuElement.offsetWidth
+			let menuHeight = menuElement.offsetHeight
+
+			console.log('Menu ', menuWidth, menuHeight)
 
 			let halfOffsetWidth = menuWidth / 2
 			let buttonHeight = 50
