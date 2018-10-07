@@ -7,13 +7,13 @@ gulp.task('jsToDocs', () => {
 		.pipe(minify({
 			noSource: true,
 		}))
-		.pipe(gulp.dest('docs'))	
+		.pipe(gulp.dest('docs/scripts'))	
 })
 
 gulp.task('cssToDocs', () => {
 	gulp.src('src/medium-sharer.css')
 		.pipe(cleanCSS({ compatibility: 'ie8' }))
-		.pipe(gulp.dest('docs/medium-sharer-min.css'))
+		.pipe(gulp.dest('docs/css'))
 })
 
 // Generate minified files for docs
