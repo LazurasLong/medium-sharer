@@ -1,6 +1,6 @@
 {
   "name": "medium-sharer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Social buttons to share text from HTML",
   "main": "src/medium-sharer.js",
   "scripts": {
@@ -25,7 +25,6 @@
     "medium",
     "social",
     "buttons",
-    "sharer",
-    "share-icons"
-  ],
+    "sharer"    
+  ]
 }
