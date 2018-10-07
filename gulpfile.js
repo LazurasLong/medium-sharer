@@ -16,13 +16,24 @@ gulp.task('cssToDocs', () => {
 		.pipe(gulp.dest('docs/medium-sharer-min.css'))
 })
 
+// Generate minified files for docs
 gulp.task('docs', ['cssToDocs', 'jsToDocs'])
 
-gulp.task('build', () => {
-	gulp.src('src/*.js')
+gulp.task('buildjs', () => {
+	gulp.src('src/medium-sharer.js')
 		.pipe(minify())
 		.pipe(gulp.dest('dist'))
 })
+
+gulp.task('buildcss', () => {
+	gulp.src('src/medium-sharer.css')
+		.pipe(cleanCSS({ compatibility: 'ie8' }))
+		.pipe(gulp.dest('dist'))
+})
+
+// Generate minified files for production(dist folder)
+gulp.task('build', ['buildjs', 'buildcss'])
+
 
 gulp.task('default', function() {
 	console.log('Hello World')
