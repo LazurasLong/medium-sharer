@@ -19,6 +19,7 @@ gulp.task('cssToDocs', () => {
 // Generate minified files for docs
 gulp.task('docs', ['cssToDocs', 'jsToDocs'])
 
+
 gulp.task('buildjs', () => {
 	gulp.src('src/medium-sharer.js')
 		.pipe(minify())
