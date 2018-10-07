@@ -3,7 +3,9 @@ const minify = require('gulp-minify')
 
 gulp.task('minify', () => {
 	gulp.src('src/*.js')
-		.pipe(minify())
+		.pipe(minify({
+			noSource: true,
+		}))
 		.pipe(gulp.dest('docs/'))
 })
 

@@ -39,8 +39,8 @@ MediumSharer.prototype = {
 				} else {
 					this.hideMenu()
 				}
-			}, 0)
-		})		
+			}.bind(this), 0)
+		}.bind(this))		
 	},
 
 	getMenuElement: function() {
