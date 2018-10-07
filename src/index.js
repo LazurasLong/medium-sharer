@@ -1,3 +1,5 @@
+import './style.css'
+
 function extend(object) {
 	if(arguments.length <= 0) {
 		throw new Error('Missing arguments in extend function')

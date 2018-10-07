@@ -1,0 +1,27 @@
+.share-menu-arrow-over:before {
+	border-style: solid;
+	content: '';
+	display: block;
+	height: 0;
+	left: 50%;
+	margin-left: -8px;
+	position: absolute;
+	width: 0;
+	border-width: 0 8px 8px 8px;
+	border-color: transparent transparent #242424 transparent;
+	top: -8px;
+}
+
+.share-menu-arrow-under:after {		
+	border-style: solid;
+	content: '';
+	display: block;
+	height: 0;
+	left: 50%;
+	margin-left: -8px;
+	position: absolute;
+	width: 0;
+	border-width: 8px 8px 0 8px;
+	border-color: #242424 transparent transparent transparent;
+	top: 50px;
+}
