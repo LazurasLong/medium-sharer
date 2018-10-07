@@ -33,7 +33,16 @@ MediumSharer.prototype = {
 	diffTop: -10,
 
 	init: function() {
-
+		document.addEventListener('mouseup', function() {		
+			setTimeout(function() {
+				if(window.getSelection().toString()) {
+					this.positionMenu(window.getSelection())		
+					this.showMenu()
+				} else {
+					this.hideMenu()
+				}
+			}, 0)
+		})		
 	},
 
 	getMenuElement: function() {
@@ -145,17 +154,3 @@ MediumSharer.defaultOptions = {
 		'linkedin',
 	]
 };
-
-(function() {
-	let sharer = new MediumSharer()
-	document.addEventListener('mouseup', function() {		
-		setTimeout(function() {
-			if(window.getSelection().toString()) {
-				sharer.positionMenu(window.getSelection())		
-				sharer.showMenu()
-			} else {
-				sharer.hideMenu()
-			}
-		}, 0)
-	})
-})()
