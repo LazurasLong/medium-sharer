@@ -4,10 +4,12 @@
   "description": "Social buttons to share text from HTML",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dante Calderón <dantehemerson@gmail.com>",
   "license": "MIT",
-  "devDependencies": {   
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-minify": "^3.1.0"
   }
 }
