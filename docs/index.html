@@ -4,6 +4,7 @@
 	<title>Medium Sharer</title>	
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="./css/medium-sharer.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i" rel="stylesheet">
 </head>
 <body>
 	<div id="Toolbar" class="Toolbar">
@@ -13,20 +14,57 @@
 			<li><button>I</button></li>
 		</ul>
 	</div>
-
-	<div class="Docker">
 	
-		<div id="Container">
-			<p>
-				My father’s family name being Pirrip, and my Christian name Philip, my infant tongue could make of both names nothing longer or more explicit than Pip. So, I called myself Pip, and came to be called Pip.
-			</p>
-			<p>
-				I give Pirrip as my father’s family name, on the authority of his tombstone and my sister,—Mrs. Joe Gargery, who married the blacksmith. As I never saw my father or my mother, and never saw any likeness of either of them (for their days were long before the days of photographs), my first fancies regarding what they were like were unreasonably derived from their tombstones. The shape of the letters on my father’s, gave me an odd idea that he was a square, stout, dark man, with curly black hair. From the character and turn of the inscription, “Also Georgiana Wife of the Above,” I drew a childish conclusion that my mother was freckled and sickly. To five little stone lozenges, each about a foot and a half long, which were arranged in a neat row beside their grave, and were sacred to the memory of five little brothers of mine,—who gave up trying to get a living, exceedingly early in that universal struggle,—I am indebted for a belief I religiously entertained that they had all been born on their backs with their hands in their trousers-pockets, and had never taken them out in this state of existence.
-			</p>
-			<img src="https://cdn4.buysellads.net/uu/1/21673/1538328304-Slack-pink_logo.png" alt="">
-			<p>
-				Ours was the marsh country, down by the river, within, as the river wound, twenty miles of the sea. My first most vivid and broad impression of the identity of things seems to me to have been gained on a memorable raw afternoon towards evening. At such a time I found out for certain that this bleak place overgrown with nettles was the churchyard; and that Philip Pirrip, late of this parish, and also Georgiana wife of the above, were dead and buried; and that Alexander, Bartholomew, Abraham, Tobias, and Roger, infant children of the aforesaid, were also dead and buried; and that the dark flat wilderness beyond the churchyard, intersected with dikes and mounds and gates, with scattered cattle feeding on it, was the marshes; and that the low leaden line beyond was the river; and that the distant savage lair from which the wind was rushing was the sea; and that the small bundle of shivers growing afraid of it all and beginning to cry, was Pip.
-			</p>
+	<h1>Medium Sharer</h1>
+
+	<div class="Wrapper">	
+		<div class="markdown-body" id="Container">
+			<h2 id="what-is-markdown-">What is Markdown?</h2>
+			<p>Markdown is a formatting syntax that allows you to write in plain text in any editing program, but still format your document like you would with a word processor. It was created to convert plain text into HTML for publishing on the web and happens to be super easy to write and just as easy to read even without being converted.</p>
+			<p>Markdown ensures that a writer&#39;s intended formatting never gets lost. If you&#39;ve ever labored on a Word document only to have its formatting scrambled when you sent it to be published to your website or when a colleague opened it in another program, you&#39;ll appreciate the simplicity and stability of Markdown.</p>
+			<p>While you can edit Markdown files in any text editor, there are are some, like <a href="http://www.iawriter.com/mac/">iA Writer for Macs</a>, that are specially built to make this easy way of writing even easier.</p>
+			<h2 id="how-do-i-write-in-markdown-">How do I write in Markdown?</h2>
+			<p>Markdown is extremely simple. In fact, it&#39;s mostly plain text, so writing a paragraph would be the same as with any text editor (there&#39;s a line between each paragraph).</p>
+			<p>If you want to put in a line break<br>you merely put two spaces after a line<br>and it shows up like this.</p>
+			<h4 id="emphasis">Emphasis</h4>
+			<p>If you want to make a word <strong>bold</strong>, you merely put two asterisks around it:  </p>
+			<p><code>like **this**</code> is  like <strong>this</strong> </p>
+			<p>To emphasize a word with <em>italics</em> you put one asterisk around it:  </p>
+			<p><code>like *this*</code> is  like <em>this</em> </p>
+			<p>or</p>
+			<p><code>use an _underscore_</code> to get the same results. </p>
+			<p><em>You can even use these same characters to emphasize complete sentences</em>.</p>
+			<h4 id="links">Links</h4>
+			<p><a href="https://www.google.com/search?q=markdown">Links are simple</a>. Just put the text to be linked in [] brackets, and the link in () parenthesis.</p>
+			<p><code>[Links are simple](https://www.google.com/search?q=markdown)</code></p>
+			<h4 id="blockquotes">Blockquotes</h4>
+			<blockquote>
+			<p>When typing an extended quote, just put the &quot;greater than&quot; sign before the paragraph.</p>
+			</blockquote>
+			<pre><code>&gt; <span class="hljs-comment">"I have dipped into books of aesthetics, but I had an uncomfortable feeling that I was reading  </span>
+			 the works of astronomers who had never looked at the stars. They were writing about poetry  
+			 <span class="hljs-keyword">as</span> <span class="hljs-keyword">if</span> poetry were <span class="hljs-keyword">a</span> task, <span class="hljs-built_in">and</span> not what it really <span class="hljs-keyword">is</span>, <span class="hljs-keyword">a</span> passion, <span class="hljs-built_in">and</span> <span class="hljs-keyword">a</span> joy.<span class="hljs-comment">"</span>
+			</code></pre><blockquote>
+			<p>&quot;I have dipped into books of aesthetics, but I had an uncomfortable feeling that I was reading the works of astronomers who had never looked at the stars. They were writing about poetry as if poetry were a task, and not what it really is, a passion, and a joy.&quot;</p>
+			</blockquote>
+			<h4 id="lists">Lists</h4>
+			<ul>
+			<li>Using Lists is Easy</li>
+			<li>Just use a dash with a space before each line</li>
+			</ul>
+			<p><code>- Using Lists is Easy</code></p>
+			<h4 id="headings">Headings</h4>
+			<pre><code># The largest heading
+			## The second largest heading
+			…
+			###### The <span class="hljs-number">6</span>th largest heading
+			</code></pre><h4 id="images">Images</h4>
+			<p>Images are just like links, but they have an exclamation point in front of them (and of course the link should be to where the image is!). The text between the brackets becomes the title, but it&#39;s not required.</p>
+			<p><img src="https://c1.staticflickr.com/3/2835/12680465824_c959772b64_t.jpg" alt="Images are easy"></p>
+			<p><code>![Images are easy](https://c1.staticflickr.com/3/2835/12680465824_c959772b64_t.jpg)</code></p>
+			<h2 id="resources">Resources</h2>
+			<p>If you&#39;re editing content in a Jekyll-based site, you can use the <a href="http://prose.io/">prose editor</a>, if your site is configured for it. If you want more advanced formatting, check out the original <a href="http://daringfireball.net/projects/markdown/">Markdown site</a>, or the <a href="http://guides.github.com/overviews/mastering-markdown/">Github Markdown page</a>.</p>
+
 		</div>
 	</div>
 </body>
